@@ -1,0 +1,94 @@
+[
+  {
+    "id": "1758714853251",
+    "dataISO": "2025-09-24T11:54:13.251Z",
+    "nomeCliente": "Felipe",
+    "observacoes": "",
+    "itens": [
+      {
+        "id": 1,
+        "nome": "X-Burguer",
+        "preco": 18.9,
+        "quantidade": 1,
+        "subtotal": 18.9
+      }
+    ],
+    "total": 18.9
+  },
+  {
+    "id": "1758715587543",
+    "dataISO": "2025-09-24T12:06:27.543Z",
+    "nomeCliente": "Felipe",
+    "observacoes": "",
+    "itens": [
+      {
+        "id": 5,
+        "nome": "Suco Natural",
+        "preco": 9.5,
+        "quantidade": 1,
+        "subtotal": 9.5
+      },
+      {
+        "id": 4,
+        "nome": "Refrigerante Lata",
+        "preco": 7,
+        "quantidade": 1,
+        "subtotal": 7
+      },
+      {
+        "id": 6,
+        "nome": "Cheesecake",
+        "preco": 14,
+        "quantidade": 1,
+        "subtotal": 14
+      }
+    ],
+    "total": 30.5
+  },
+  {
+    "id": "1758717022990",
+    "dataISO": "2025-09-24T12:30:22.990Z",
+    "nomeCliente": "felipe",
+    "observacoes": "",
+    "itens": [
+      {
+        "id": 2,
+        "nome": "X-Salada",
+        "preco": 20.9,
+        "quantidade": 1,
+        "subtotal": 20.9
+      },
+      {
+        "id": 3,
+        "nome": "Batata Média",
+        "preco": 12,
+        "quantidade": 1,
+        "subtotal": 12
+      }
+    ],
+    "total": 32.9
+  },
+  {
+    "id": "1758717170624",
+    "dataISO": "2025-09-24T12:32:50.624Z",
+    "nomeCliente": "felipe",
+    "observacoes": "",
+    "itens": [
+      {
+        "id": 1,
+        "nome": "X-Burguer",
+        "preco": 18.9,
+        "quantidade": 1,
+        "subtotal": 18.9
+      },
+      {
+        "id": 2,
+        "nome": "X-Salada",
+        "preco": 20.9,
+        "quantidade": 1,
+        "subtotal": 20.9
+      }
+    ],
+    "total": 39.8
+  }
+]

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lanchonete — Cardápio Online</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>🍔 Lanchonete</h1>
+    <div class="filters">
+      <input id="busca" type="search" placeholder="Buscar por nome..." />
+      <select id="categoria">
+        <option value=""node server.js
+Todas as categorias</option>
+      </select>
+      <button id="btnAdmin" class="btn-primary">Área Admin</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Cardápio</h2>
+      <div id="lista" class="grid"></div>
+    </section>
+
+    <aside class="cart">
+      <h2>Carrinho</h2>
+      <div id="carrinhoVazio" class="muted">Seu carrinho está vazio.</div>
+      <ul id="carrinho"></ul>
+
+      <div class="total-row">
+        <span>Total:</span>
+        <strong id="total">R$ 0,00</strong>
+      </div>
+
+      <form id="formPedido" class="pedido-form">
+        <label>
+          Nome do cliente
+          <input id="nomeCliente" required />
+        </label>
+        <label>
+          Observações
+          <textarea id="observacoes" rows="2" placeholder="ex: sem cebola"></textarea>
+        </label>
+        <button type="submit" class="btn-primary" id="btnEnviar" disabled>Enviar pedido</button>
+        <div id="msg" class="msg"></div>
+      </form>
+    </aside>
+    <div id="loginModal" class="modal" hidden>
+  <div class="modal-box">
+    <h2>🔒 Login Admin</h2>
+    <label>Usuário
+      <input id="adminUser" placeholder="admin" />
+    </label>
+    <label>Senha
+      <input id="adminPass" type="password" placeholder="admin" />
+    </label>
+    <div class="actions">
+      <button id="btnLogin" class="btn-primary">Entrar</button>
+      <button id="btnClose">Cancelar</button>
+    </div>
+    <div id="loginMsg" class="msg"></div>
+  </div>
+</div>
+
+  </main>
+
+  <footer class="footer">
+    <small>HTML semântico • CSS responsivo • Node/Express</small>
+  </footer>
+
+  <script>
+    window.API_URL = "http://localhost:3000";
+  </script>
+<script src="app.js" defer></script>
+
+</body>
+</html>

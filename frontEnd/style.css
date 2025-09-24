@@ -1,0 +1,188 @@
+:root{
+  --bg:#0f1115;
+  --panel:#171923;
+  --muted:#9aa1b2;
+  --text:#e6e9ef;
+  --accent:#4f8cff;
+  --ok:#10b981;
+  --err:#ef4444;
+  --border:#2a2f3a;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+h1,h2{margin:0 0 .75rem}
+a{color:inherit}
+
+.topbar{
+  position:sticky;top:0;z-index:10;
+  display:flex;gap:1rem;align-items:center;justify-content:space-between;
+  padding:1rem 1.25rem;border-bottom:1px solid var(--border);background:rgba(15,17,21,.8);backdrop-filter:saturate(150%) blur(8px);
+}
+.filters{display:flex;gap:.5rem;align-items:center}
+.filters input,.filters select{
+  background:#0b0d12;border:1px solid var(--border);color:var(--text);padding:.6rem .8rem;border-radius:.6rem;min-width:12rem
+}
+.container{display:grid;grid-template-columns:1fr 360px;gap:1rem;max-width:1100px;margin:1rem auto;padding:0 1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:1rem;display:flex;flex-direction:column;gap:.5rem}
+.card h3{margin:.25rem 0 .15rem;font-size:1.05rem}
+.badge{display:inline-block;font-size:.8rem;color:var(--muted);border:1px dashed var(--border);padding:.15rem .5rem;border-radius:999px}
+.price{margin-top:auto;font-weight:700}
+.card button{
+  margin-top:.5rem;padding:.55rem .8rem;border:none;border-radius:.6rem;
+  background:var(--accent);color:#fff;cursor:pointer
+}
+.card .qty{display:flex;align-items:center;gap:.5rem;margin-top:.5rem}
+.qty button{background:#0b0d12;border:1px solid var(--border);color:var(--text);padding:.35rem .6rem;border-radius:.5rem}
+
+.cart{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:1rem;height:fit-content;position:sticky;top:88px}
+.cart h2{margin-bottom:.5rem}
+.muted{color:var(--muted)}
+#carrinho{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.75rem}
+.item-row{display:grid;grid-template-columns:1fr auto auto;gap:.5rem;align-items:center}
+.item-row .name{color:#fff}
+.item-row .controls{display:flex;gap:.35rem;align-items:center}
+.item-row .controls button{background:#0b0d12;border:1px solid var(--border);color:var(--text);padding:.3rem .55rem;border-radius:.45rem}
+.total-row{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);padding-top:.75rem;margin-top:.75rem;font-size:1.05rem}
+.pedido-form{display:flex;flex-direction:column;gap:.5rem;margin-top:.75rem}
+.pedido-form input,.pedido-form textarea{width:100%;background:#0b0d12;border:1px solid var(--border);color:var(--text);padding:.6rem .8rem;border-radius:.6rem}
+.btn-primary{background:var(--accent);color:white;border:none;border-radius:.6rem;padding:.7rem 1rem;cursor:pointer}
+.msg{min-height:1.2rem;font-size:.95rem}
+.msg.ok{color:var(--ok)}
+.msg.err{color:var(--err)}
+
+.footer{text-align:center;color:var(--muted);padding:1rem}
+#btnAdmin {
+  background:#2d3748;
+  font-size:.9rem;
+  padding:.55rem .9rem;
+}
+#btnAdmin:hover {
+  background:#4f8cff;
+}
+.modal[hidden]{ display:none !important; }
+
+/* estilos básicos do modal (se ainda não colocou) */
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.6)}
+.modal-box{background:#171923;border:1px solid #2a2f3a;padding:1.5rem;border-radius:12px;width:320px;display:flex;flex-direction:column;gap:.6rem}
+.modal-box input{width:100%}
+.modal-box .actions{display:flex;justify-content:space-between;margin-top:.5rem}
+#btnAdmin{background:#2d3748;padding:.55rem .9rem}
+#btnAdmin:hover{background:#4f8cff}
+
+/* ===================== */
+/*  PATCH DE RESPONSIVIDADE (mobile-first) */
+/*  Cole no final do style.css              */
+/* ===================== */
+
+/* Toque confortável em todos os botões/inputs */
+button, .btn-primary, input, select, textarea {
+  font-size: 16px;       /* evita zoom no iOS */
+  line-height: 1.2;
+  min-height: 44px;      /* tamanho mínimo recomendado para toque */
+}
+* Esconder modal quando hidden */
+.modal[hidden]{ display: none !important; }
+
+/* ------- Página ADMIN (tabela responsiva) ------- */
+.admin { max-width: 1100px; margin: 1rem auto; padding: 0 1rem; }
+.table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border); }
+.admin table { width: 100%; border-collapse: collapse; background: var(--panel); }
+.admin th, .admin td { padding: .75rem 1rem; border-bottom: 1px solid var(--border); text-align: left; }
+.admin th { color: var(--muted); font-weight: 600; }
+
+/* Breakpoint 1024px: ajustes gerais */
+@media (max-width: 1024px){
+  .container{
+    grid-template-columns: 1fr; /* cardápio em cima, carrinho embaixo */
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+  .cart{
+    position: static;     /* remove sticky no mobile */
+    margin-top: .5rem;
+  }
+}
+
+/* Breakpoint 768px: layout empilhado e filtros fluidos */
+@media (max-width: 768px){
+  .topbar{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .75rem;
+  }
+  .filters{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr auto; /* busca | categoria | admin */
+    gap: .5rem;
+  }
+  .filters input, .filters select, #btnAdmin{
+    min-width: 0;
+    width: 100%;
+  }
+
+  .grid{
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: .75rem;
+  }
+  .card{
+    padding: .9rem;
+    border-radius: 12px;
+  }
+  .badge{ font-size: .75rem }
+  .price{ font-size: 1rem }
+
+  .item-row{
+    grid-template-columns: 1fr auto; /* nome/preço em linhas mais simples */
+    row-gap: .25rem;
+  }
+  .item-row .controls{
+    justify-self: end;
+  }
+
+  .pedido-form{
+    gap: .6rem;
+  }
+  .pedido-form input, .pedido-form textarea{
+    font-size: 16px;
+  }
+
+  /* Modal ocupa mais da tela no mobile */
+  .modal-box{
+    width: min(92vw, 380px);
+    margin: 0 1rem;
+  }
+}
+
+/* Breakpoint 480px: layout super compacto */
+@media (max-width: 480px){
+  h1{ font-size: 1.4rem }
+  h2{ font-size: 1.15rem }
+
+  .filters{
+    grid-template-columns: 1fr; /* uma coluna: busca, categoria e admin empilhados */
+  }
+
+  .grid{
+    grid-template-columns: 1fr; /* um card por linha */
+  }
+
+  .total-row{
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 680px){
+  /* empilha as células em “cartões” no ultra-mobile */
+  .admin table, .admin thead, .admin tbody, .admin th, .admin td, .admin tr { display: block; }
+  .admin thead { display: none; }
+  .admin tr { border-bottom: 1px solid var(--border); margin-bottom: .75rem; padding-bottom: .5rem; }
+  .admin td { display: grid; grid-template-columns: 120px 1fr; gap: .5rem; }
+  .admin td::before {
+    content: attr(data-label);
+    color: var(--muted);
+    font-weight: 600;
+  }
+}

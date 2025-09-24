@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin — Pedidos</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .admin {max-width:1100px;margin:2rem auto;padding:0 1rem}
+    table{width:100%;border-collapse:collapse;background:#171923;border:1px solid #2a2f3a;border-radius:12px;overflow:hidden}
+    th,td{padding:.75rem 1rem;border-bottom:1px solid #2a2f3a;text-align:left}
+    th{color:#9aa1b2}
+    tr:last-child td{border-bottom:none}
+    .badge{font-size:.8rem}
+  </style>
+</head>
+<body>
+  <div class="admin">
+    <h1>📦 Pedidos</h1>
+    <p class="muted">Atualize a página para recarregar.</p>
+    <div class="table-wrap">
+    <table id="tb">
+      <thead>
+        <tr>
+          <th>#ID</th><th>Data</th><th>Cliente</th><th>Observações</th><th>Itens</th><th>Total</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"><tr><td colspan="6" class="muted">Carregando…</td></tr></tbody>
+    </table>
+    </div>
+  </div>
+
+  <script>window.API_URL = "http://localhost:3000";</script>
+  <script src="admin.js" defer></script>
+</body>
+</html>
